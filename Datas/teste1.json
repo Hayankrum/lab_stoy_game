@@ -1,0 +1,50 @@
+{
+  "trilhas": {
+	"principal": [
+	  {
+		"layout": "direita",
+		"tipo": "quadrado",
+		"imagem": "res://Assets/inclusao/1.png",
+		"texto": "Teste",
+		"posicao_x": 200,
+		"posicao_y": 220,
+		"interativo": true,
+		"quarto": "quarto_teste"
+	  }
+	]
+  },
+
+  "quartos": {
+	"quarto_teste": {
+	  "painel": "painel_01",
+	  "ramificacao_padrao": "principal",
+	  "dialogo": [
+		{
+		  "fala": "Narrativa de teste."
+		},
+		{
+		  "fala": "Escolha qualquer opção.",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Continuar",
+			  "set": {
+				"empatia": 5,
+				"flag:inclusao": true
+			  },
+			  "ramificacao": "principal"
+			}
+		  ]
+		}
+	  ]
+	}
+  },
+
+  "finais": [
+	{
+	  "id": "final_teste",
+	  "condicao": {},
+	  "texto": "FINAL DE TESTE"
+	}
+  ]
+}

@@ -1,0 +1,919 @@
+{
+  "trilhas": {
+	"principal": [
+	  {
+		"layout": "direita",
+		"tipo": "quadrado",
+		"imagem": "res://Assets/inclusao/1.png",
+		"texto": "Você é aluno-monitor. Vito, um novo aluno surdo, acabou de chegar na escola.",
+		"posicao_x": 200,
+		"posicao_y": 220,
+		"interativo": true,
+		"quarto": "quarto_primeiro_dia"
+	  },
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/2.png",
+		"texto": "O recreio chegou. Vito está sozinho num canto, observando os outros.",
+		"posicao_x": 800,
+		"posicao_y": 380,
+		"interativo": true,
+		"quarto": "quarto_recreio"
+	  },
+	  {
+		"layout": "esquerda",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/3.png",
+		"texto": "Na cantina, o atendente olha para você e pergunta o que Vito quer pedir.",
+		"posicao_x": 1400,
+		"posicao_y": 240,
+		"interativo": true,
+		"quarto": "quarto_cantina"
+	  }
+	],
+	"ramo_inclusao": [
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/4.png",
+		"texto": "Na aula seguinte, algo mudou. Os colegas estão tentando se comunicar com Vito.",
+		"posicao_x": 2200,
+		"posicao_y": 480,
+		"interativo": true,
+		"quarto": "quarto_aula"
+	  },
+	  {
+		"layout": "direita",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/5.png",
+		"texto": "Na excursão da semana seguinte, algo diferente acontece no ônibus.",
+		"posicao_x": 3000,
+		"posicao_y": 300,
+		"interativo": true,
+		"quarto": "quarto_onibus"
+	  }
+	],
+	"ramo_dificuldade": [
+	  {
+		"layout": "cima",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/4.png",
+		"texto": "Vito passou o dia sem conseguir se comunicar com ninguém além de você.",
+		"posicao_x": 2200,
+		"posicao_y": 200,
+		"interativo": true,
+		"quarto": "quarto_isolamento"
+	  },
+	  {
+		"layout": "esquerda",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/5.png",
+		"texto": "A professora Jeane chama você para uma conversa depois da aula.",
+		"posicao_x": 3000,
+		"posicao_y": 380,
+		"interativo": true,
+		"quarto": "quarto_reflexao"
+	  }
+	],
+	"final_comum": [
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/6.png",
+		"texto": "Inclusão de verdade é quando ninguém mais precisa ser intermediário — todos conseguem se entender.",
+		"posicao_x": 3800,
+		"posicao_y": 420
+	  },
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/inclusao/7.png",
+		"texto": "Sua turma aprendeu a ouvir de outro jeito. E isso começa com você.",
+		"posicao_x": 4500,
+		"posicao_y": 620
+	  }
+	]
+  },
+  "quartos": {
+	"quarto_primeiro_dia": {
+	  "painel": "painel_01",
+	  "ramificacao_padrao": "principal",
+	  "dialogo": [
+		{
+		  "fala": "A coordenação pede para você ajudar Vito durante os primeiros dias. Ele é surdo e usa Libras para se comunicar.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "A professora Jeane vai acompanhar de perto. Ela explica: 'Libras é uma língua completa, com gramática própria — reconhecida por lei desde 2002.'",
+		  "personagem": "res://Assets/inclusao/avata/jeane.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "Na entrada, Vito tenta cumprimentar um colega acenando. O colega fica sem saber o que fazer e desvia o olhar.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Você está ao lado. O que você faz?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Apresento Vito ao colega e mostro como cumprimentá-lo.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"social": 1,
+				"flag:apresentou": true
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Fico por perto mas deixo eles se resolverem.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"social": 1
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Vou buscar meu material — minha aula começa logo.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/isolado.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Peço pro colega só acenar de volta, não precisa de mais.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"empatia": 1
+			  },
+			  "ramificacao": "principal"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_recreio": {
+	  "painel": "painel_02",
+	  "ramificacao_padrao": "principal",
+	  "dialogo": [
+		{
+		  "fala": "No recreio, Vito está sentado sozinho na arquibancada, olhando o grupo jogar bola.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Um grupo de colegas passa por você e comenta: 'Fica difícil chamá-lo pro jogo, né? A gente não sabe como falar com ele.'",
+		  "personagem": "res://Assets/inclusao/avata/amiga.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "O que você responde?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Ensino um sinal básico de 'quer jogar?' e vamos juntos chamar Vito.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"social": 2,
+				"flag:ensinou_sinal": true
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Digo que dá pra usar gestos e expressões — não precisa saber Libras.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"empatia": 1,
+				"social": 1
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Digo que ele provavelmente prefere ficar quieto mesmo.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/isolado.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "principal"
+			},
+			{
+			  "texto": "Sugiro que mandem mensagem no celular — é mais fácil.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"social": 1
+			  },
+			  "ramificacao": "principal"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_cantina": {
+	  "painel": "painel_03",
+	  "ramificacao_padrao": "ramo_dificuldade",
+	  "dialogo": [
+		{
+		  "fala": "Na cantina, o atendente olha para você — não para Vito — e pergunta: 'O que ele vai querer?'",
+		  "personagem": "res://Assets/inclusao/avata/mulher cantina.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "Vito está ao seu lado, olhando o cardápio na lousa.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "O que você faz?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Olho pro Vito, aponto o cardápio e espero ele me indicar o que quer.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"flag:respeitou_autonomia": true
+			  },
+			  "ramificacao": "ramo_inclusao"
+			},
+			{
+			  "texto": "Peço o lanche que eu sei que ele gosta — a fila tá grande.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/isolado.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "ramo_dificuldade"
+			},
+			{
+			  "texto": "Digo pro atendente que Vito vai gesticular o que quer, e fico do lado se precisar.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"social": 1,
+				"flag:respeitou_autonomia": true
+			  },
+			  "ramificacao": "ramo_inclusao"
+			},
+			{
+			  "texto": "Pergunto pra Jeane o que eu devia fazer — ela está perto.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"empatia": 1
+			  },
+			  "ramificacao": "ramo_dificuldade"
+			}
+		  ]
+		},
+		{
+		  "fala": "Jeane comenta baixinho: 'Sempre fale com a pessoa surda diretamente. O atendente precisa entender isso também.'",
+		  "personagem": "res://Assets/inclusao/avata/jeane.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "Quiz rápido antes da próxima aula!",
+		  "personagem_ocultar": true
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "Qual a melhor forma de chamar a atenção de uma pessoa surda?",
+			  "alternativas": [
+				{
+				  "texto": "A) Gritar mais alto.",
+				  "correta": false,
+				  "feedback": "✗ Gritar não ajuda — a pessoa surda não ouve. O contato visual é o caminho."
+				},
+				{
+				  "texto": "B) Tocar levemente no ombro ou acenar.",
+				  "correta": true,
+				  "feedback": "✓ Correto! Um toque suave no ombro ou um aceno são formas respeitosas de chamar a atenção."
+				},
+				{
+				  "texto": "C) Jogar algum objeto na direção dela.",
+				  "correta": false,
+				  "feedback": "✗ Isso pode assustar e é desrespeitoso. Contato visual e toque gentil funcionam melhor."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Quando uma pessoa surda está acompanhada por um intérprete, com quem você deve falar?",
+			  "alternativas": [
+				{
+				  "texto": "A) Com o intérprete.",
+				  "correta": false,
+				  "feedback": "✗ O intérprete é um canal, não o interlocutor. Fale sempre com a pessoa surda."
+				},
+				{
+				  "texto": "B) Com qualquer um dos dois.",
+				  "correta": false,
+				  "feedback": "✗ O mais correto é falar com a pessoa surda. Isso respeita sua autonomia e presença."
+				},
+				{
+				  "texto": "C) Com a pessoa surda.",
+				  "correta": true,
+				  "feedback": "✓ Exato! Dirija-se à pessoa surda diretamente. O intérprete só facilita a comunicação."
+				}
+			  ],
+			  "dica": {
+				"condicao": {
+				  "flag:respeitou_autonomia": true
+				},
+				"texto": "💡 Dica: você já praticou isso na cantina — aplique o mesmo raciocínio aqui!"
+			  }
+			},
+			{
+			  "pergunta": "O que significa inclusão na prática?",
+			  "alternativas": [
+				{
+				  "texto": "A) Garantir que a pessoa possa participar por conta própria.",
+				  "correta": true,
+				  "feedback": "✓ Isso mesmo! Inclusão é criar condições para a pessoa agir com autonomia."
+				},
+				{
+				  "texto": "B) Deixar a pessoa à vontade sem interferir em nada.",
+				  "correta": false,
+				  "feedback": "✗ Ignorar barreiras também é exclusão. Inclusão exige ação ativa."
+				},
+				{
+				  "texto": "C) Resolver tudo pela pessoa pra ela não se sentir excluída.",
+				  "correta": false,
+				  "feedback": "✗ Fazer tudo pela pessoa tira sua autonomia. Inclusão é participação, não dependência."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": {
+			"dicas": 1,
+			"acertos": 1
+		  },
+		  "set_erro": {
+			"erros": 1
+		  },
+		  "nota_minima": 0.5,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": ""
+		}
+	  ]
+	},
+	"quarto_aula": {
+	  "painel": "painel_04",
+	  "ramificacao_padrao": "ramo_inclusao",
+	  "dialogo": [
+		{
+		  "fala": "Na aula de História, a professora pede trabalho em duplas. Todo mundo se vira pro parceiro — Vito fica olhando sem saber o que fazer.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Uma colega se aproxima com o celular, digita uma mensagem. Vito lê, sorri e responde digitando também.",
+		  "personagem": "res://Assets/inclusao/avata/amiga.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "condicao": {
+			"flag:ensinou_sinal": true
+		  },
+		  "fala": "Outro colega ainda tenta usar o sinal que você ensinou no recreio. Fica engraçado, mas Vito ri — e isso os aproxima.",
+		  "personagem": "res://Assets/inclusao/avata/vito_feliz.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Você vê isso de longe. O que passa pela sua cabeça?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Fico feliz — mas fico de olho caso Vito precise de ajuda.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 1,
+				"social": 1
+			  },
+			  "ramificacao": "ramo_inclusao"
+			},
+			{
+			  "texto": "Deixo rolar — eles estão se virando bem sem mim.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/limitada.png",
+			  "set": {
+				"social": 1,
+				"flag:confiou": true
+			  },
+			  "ramificacao": "ramo_inclusao"
+			},
+			{
+			  "texto": "Me intrometo pra garantir que a comunicação está certa.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/isolado.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "ramo_inclusao"
+			}
+		  ]
+		},
+		{
+		  "fala": "Quiz rápido! Vamos revisar o que aprendemos sobre comunicação e inclusão.",
+		  "personagem_ocultar": true
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "Se você não sabe Libras, o que pode ajudar na comunicação?",
+			  "alternativas": [
+				{
+				  "texto": "A) Falar muito devagar.",
+				  "correta": false,
+				  "feedback": "✗ Falar devagar não resolve a barreira de comunicação."
+				},
+				{
+				  "texto": "B) Gestos, expressões e escrita.",
+				  "correta": true,
+				  "feedback": "✓ Exato! Existem diversas maneiras de se comunicar."
+				},
+				{
+				  "texto": "C) Ignorar a pessoa até encontrar um intérprete.",
+				  "correta": false,
+				  "feedback": "✗ Existem outras formas de comunicação além do intérprete."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Qual atitude demonstra inclusão?",
+			  "alternativas": [
+				{
+				  "texto": "A) Fazer tudo pela pessoa.",
+				  "correta": false,
+				  "feedback": "✗ Isso reduz a autonomia da pessoa."
+				},
+				{
+				  "texto": "B) Criar maneiras para que todos participem.",
+				  "correta": true,
+				  "feedback": "✓ Isso mesmo! Inclusão é garantir participação."
+				},
+				{
+				  "texto": "C) Esperar que a pessoa surda sempre peça ajuda.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão exige iniciativa e participação de todos."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": { "acertos": 1, "social": 1 },
+		  "set_erro": { "erros": 1 },
+		  "nota_minima": 0.5,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": ""
+		}
+	  ]
+	},
+	"quarto_onibus": {
+	  "painel": "painel_05",
+	  "ramificacao_padrao": "final_comum",
+	  "dialogo": [
+		{
+		  "fala": "No ônibus da excursão, os colegas já se comunicam com Vito por conta própria — gestos, celular, expressões.",
+		  "personagem": "res://Assets/inclusao/avata/vito_feliz.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Ana aprendeu alguns sinais. Pedro usa o celular. Carlos só faz mímica e Vito ri muito disso.",
+		  "personagem": "res://Assets/inclusao/avata/amiga.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "condicao": {
+			"empatia": 4
+		  },
+		  "fala": "Vito olha para você e faz o sinal de 'obrigado' — mão espalmada no queixo, movendo para frente. Ele sabe que tudo começou com você.",
+		  "personagem": "res://Assets/inclusao/avata/vito_feliz.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "condicao": {
+			"empatia__lt": 4
+		  },
+		  "fala": "Vito sorri para o grupo. Aos poucos, ele vai precisar cada vez menos de intermediários.",
+		  "personagem": "res://Assets/inclusao/avata/vito_atento.png"
+		},
+		{
+		  "fala": "Ninguém está te chamando para traduzir. Por um segundo parece estranho.",
+		  "personagem_ocultar": false,
+		  "personagem": "res://Assets/inclusao/avata/vito_feliz.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Aí você entende: seu trabalho nunca foi falar por Vito. Era ajudar as pessoas a aprenderem a ouvir de outro jeito.",
+		  "personagem": "res://Assets/inclusao/avata/jeane.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "Último desafio! Veja o quanto você aprendeu sobre inclusão.",
+		  "personagem_ocultar": true
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "O principal objetivo da inclusão é:",
+			  "alternativas": [
+				{
+				  "texto": "A) Fazer todos serem iguais.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão respeita as diferenças."
+				},
+				{
+				  "texto": "B) Separar grupos para facilitar.",
+				  "correta": false,
+				  "feedback": "✗ Separar normalmente gera exclusão."
+				},
+				{
+				  "texto": "C) Garantir participação e autonomia.",
+				  "correta": true,
+				  "feedback": "✓ Correto! Inclusão significa participação com autonomia."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Quando os colegas conseguem conversar com Vito sem ajuda constante, isso significa:",
+			  "alternativas": [
+				{
+				  "texto": "A) Que o tutor falhou.",
+				  "correta": false,
+				  "feedback": "✗ O objetivo era justamente promover autonomia."
+				},
+				{
+				  "texto": "B) Que a inclusão está funcionando.",
+				  "correta": true,
+				  "feedback": "✓ Exatamente! A comunicação está acontecendo naturalmente."
+				},
+				{
+				  "texto": "C) Que Vito não precisa mais dos amigos.",
+				  "correta": false,
+				  "feedback": "✗ A amizade continua importante."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Qual foi a principal lição da história?",
+			  "alternativas": [
+				{
+				  "texto": "A) Todos podem aprender novas formas de comunicação.",
+				  "correta": true,
+				  "feedback": "✓ Perfeito! A comunicação pode acontecer de muitas formas."
+				},
+				{
+				  "texto": "B) A pessoa surda deve se adaptar sozinha.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão é responsabilidade coletiva."
+				},
+				{
+				  "texto": "C) Só intérpretes conseguem se comunicar com pessoas surdas.",
+				  "correta": false,
+				  "feedback": "✗ Qualquer pessoa pode aprender formas de comunicação."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": { "acertos": 1, "empatia": 1, "social": 1 },
+		  "set_erro": { "erros": 1 },
+		  "nota_minima": 0.5,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": ""
+		},
+		{
+		  "fala": "O que você sente ao ver isso?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Orgulho. Era esse o objetivo desde o começo.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/fluente.png",
+			  "set": {
+				"empatia": 1,
+				"social": 2,
+				"flag:inclusao": true
+			  },
+			  "ramificacao": "final_comum"
+			},
+			{
+			  "texto": "Um pouco perdido, mas feliz — não sabia que terminava assim.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/comunicacao.png",
+			  "set": {
+				"social": 1,
+				"flag:refletiu": true
+			  },
+			  "ramificacao": "final_comum"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_isolamento": {
+	  "painel": "painel_04",
+	  "ramificacao_padrao": "ramo_dificuldade",
+	  "dialogo": [
+		{
+		  "fala": "Vito passou o dia inteiro dependendo só de você. Ninguém mais tentou se comunicar com ele.",
+		  "personagem": "res://Assets/inclusao/avata/vito_triste.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Na aula de Artes, a professora pede para formarem grupos. Vito fica parado, sem saber para onde ir.",
+		  "personagem": "res://Assets/inclusao/avata/vito_triste.png"
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "Libras é:",
+			  "alternativas": [
+				{
+				  "texto": "A) Uma forma de mímica.",
+				  "correta": false,
+				  "feedback": "✗ Libras é uma língua completa, não uma mímica."
+				},
+				{
+				  "texto": "B) Um conjunto de gestos sem regras.",
+				  "correta": false,
+				  "feedback": "✗ Libras possui gramática e estrutura próprias."
+				},
+				{
+				  "texto": "C) Uma língua reconhecida por lei no Brasil.",
+				  "correta": true,
+				  "feedback": "✓ Correto! Libras foi reconhecida oficialmente em 2002."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Se você não sabe Libras, o que pode ajudar na comunicação?",
+			  "alternativas": [
+				{
+				  "texto": "A) Falar muito devagar.",
+				  "correta": false,
+				  "feedback": "✗ Falar devagar não resolve a barreira de comunicação."
+				},
+				{
+				  "texto": "B) Gestos, expressões e escrita.",
+				  "correta": true,
+				  "feedback": "✓ Exato! Existem diversas maneiras de se comunicar."
+				},
+				{
+				  "texto": "C) Ignorar a pessoa até encontrar um intérprete.",
+				  "correta": false,
+				  "feedback": "✗ Existem outras formas de comunicação além do intérprete."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Qual atitude demonstra inclusão?",
+			  "alternativas": [
+				{
+				  "texto": "A) Fazer tudo pela pessoa.",
+				  "correta": false,
+				  "feedback": "✗ Isso reduz a autonomia da pessoa."
+				},
+				{
+				  "texto": "B) Criar maneiras para que todos participem.",
+				  "correta": true,
+				  "feedback": "✓ Isso mesmo! Inclusão é garantir participação."
+				},
+				{
+				  "texto": "C) Esperar que a pessoa surda sempre peça ajuda.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão exige iniciativa e participação de todos."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": {
+			"acertos": 1,
+			"social": 1
+		  },
+		  "set_erro": {
+			"erros": 1
+		  },
+		  "nota_minima": 0.5,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": ""
+		},
+		{
+		  "fala": "O que você faz?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Coloco Vito no meu grupo e fico responsável por tudo.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/isolado.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "ramo_dificuldade"
+			},
+			{
+			  "texto": "Peço pra um colega incluir Vito no grupo dele e fico por perto se precisar.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"flag:refletiu": true
+			  },
+			  "ramificacao": "ramo_dificuldade"
+			},
+			{
+			  "texto": "Mostro pro grupo ao lado como chamar Vito com um gesto simples.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 2,
+				"social": 1,
+				"flag:refletiu": true
+			  },
+			  "ramificacao": "ramo_dificuldade"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_reflexao": {
+	  "painel": "painel_05",
+	  "ramificacao_padrao": "final_comum",
+	  "dialogo": [
+		{
+		  "fala": "A professora Jeane te chama depois da aula. 'Não é todo momento que vai ter um tutor por perto. O que você faz hoje define se Vito vai conseguir ser independente amanhã.'",
+		  "personagem": "res://Assets/inclusao/avata/jeane.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "'Inclusão não é fazer tudo pela pessoa. É garantir que ela possa participar — com autonomia.'",
+		  "personagem": "res://Assets/inclusao/avata/jeane.png"
+		},
+		{
+		  "condicao": {
+			"moral__lt": 0
+		  },
+		  "fala": "Vito aparece na porta e faz um sinal com as mãos abertas, palmas para cima, movendo para frente. Significa 'por favor'.",
+		  "personagem": "res://Assets/inclusao/avata/vito_triste.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "O principal objetivo da inclusão é:",
+			  "alternativas": [
+				{
+				  "texto": "A) Fazer todos serem iguais.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão respeita as diferenças."
+				},
+				{
+				  "texto": "B) Separar grupos para facilitar.",
+				  "correta": false,
+				  "feedback": "✗ Separar normalmente gera exclusão."
+				},
+				{
+				  "texto": "C) Garantir participação e autonomia.",
+				  "correta": true,
+				  "feedback": "✓ Correto! Inclusão significa participação com autonomia."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Quando os colegas conseguem conversar com Vito sem ajuda constante, isso significa:",
+			  "alternativas": [
+				{
+				  "texto": "A) Que o tutor falhou.",
+				  "correta": false,
+				  "feedback": "✗ O objetivo era justamente promover autonomia."
+				},
+				{
+				  "texto": "B) Que a inclusão está funcionando.",
+				  "correta": true,
+				  "feedback": "✓ Exatamente! A comunicação está acontecendo naturalmente."
+				},
+				{
+				  "texto": "C) Que Vito não precisa mais dos amigos.",
+				  "correta": false,
+				  "feedback": "✗ A amizade continua importante."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Qual foi a principal lição da história?",
+			  "alternativas": [
+				{
+				  "texto": "A) Todos podem aprender novas formas de comunicação.",
+				  "correta": true,
+				  "feedback": "✓ Perfeito! A comunicação pode acontecer de muitas formas."
+				},
+				{
+				  "texto": "B) A pessoa surda deve se adaptar sozinha.",
+				  "correta": false,
+				  "feedback": "✗ Inclusão é responsabilidade coletiva."
+				},
+				{
+				  "texto": "C) Só intérpretes conseguem se comunicar com pessoas surdas.",
+				  "correta": false,
+				  "feedback": "✗ Qualquer pessoa pode aprender formas de comunicação."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": {
+			"acertos": 1,
+			"empatia": 1,
+			"social": 1
+		  },
+		  "set_erro": {
+			"erros": 1
+		  },
+		  "nota_minima": 0.5,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": ""
+		},
+		{
+		  "fala": "Você tem uma semana até a excursão. O que decide fazer?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Ir até Vito agora e tentar me comunicar, mesmo sem saber muito ainda.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/acolhimento.png",
+			  "set": {
+				"empatia": 2,
+				"moral": 1,
+				"flag:refletiu": true
+			  },
+			  "ramificacao": "final_comum"
+			},
+			{
+			  "texto": "Aprender o alfabeto em Libras antes da excursão.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/inclusao.png",
+			  "set": {
+				"empatia": 1,
+				"flag:refletiu": true
+			  },
+			  "ramificacao": "final_comum"
+			},
+			{
+			  "texto": "Continuar fazendo o que já faço — traduzir quando precisar.",
+			  "imagem_feedback": "res://Assets/inclusao/feedbacks/passiva.png",
+			  "set": {
+				"moral": -1
+			  },
+			  "ramificacao": "final_comum"
+			}
+		  ]
+		}
+	  ]
+	}
+  },
+  "finais": [
+	{
+	  "id": "final_inclusao_pleno",
+	  "condicao": {
+		"flag:inclusao": true,
+		"empatia": 5
+	  },
+	  "texto": "✦ FINAL: PONTES SEM INTERMEDIÁRIO\n\nVocê entendeu o que poucos entendem: o melhor tutor é aquele que se torna desnecessário. Sua turma aprendeu a se comunicar com Vito sem precisar de você no meio. Isso é inclusão de verdade."
+	},
+	{
+	  "id": "final_inclusao",
+	  "condicao": {
+		"flag:inclusao": true,
+		"empatia": 3
+	  },
+	  "texto": "✦ FINAL: O TRABALHO BEM FEITO\n\nParabéns! Você ajudou Vito a se integrar respeitando sua autonomia. No ônibus da excursão, ele já conversava com os colegas por conta própria. Sua missão foi cumprida."
+	},
+	{
+	  "id": "final_confianca",
+	  "condicao": {
+		"flag:confiou": true,
+		"social": 4
+	  },
+	  "texto": "✦ FINAL: DEIXAR CRESCER\n\nVocê aprendeu a hora certa de se afastar. Inclusão não é proteção constante — é confiar que as pessoas conseguem se conectar quando você cria o espaço certo."
+	},
+	{
+	  "id": "final_empatia",
+	  "condicao": {
+		"flag:apresentou": true,
+		"empatia": 2
+	  },
+	  "texto": "✦ FINAL: PRIMEIROS PASSOS\n\nVocê deu o primeiro passo ao apresentar Vito e quebrar o silêncio inicial. Ainda há muito a aprender, mas começar já é um grande avanço."
+	},
+	{
+	  "id": "final_reflexao",
+	  "condicao": {
+		"flag:refletiu": true
+	  },
+	  "texto": "✦ FINAL: A VIRADA\n\nVocê errou em algum momento, mas refletiu. Perceber que o outro precisa de você e decidir agir — isso já é inclusão. Vito espera pela próxima conversa."
+	},
+	{
+	  "id": "final_silencio",
+	  "condicao": {
+		"moral__lt": 0
+	  },
+	  "texto": "✦ FINAL: BARREIRA DO SILÊNCIO\n\nSem pontes, Vito ficou isolado. Mas nunca é tarde: o alfabeto em Libras tem apenas 23 configurações. Você consegue aprender esta semana — e mudar tudo na próxima."
+	},
+	{
+	  "id": "final_neutro",
+	  "condicao": {},
+	  "texto": "✦ FINAL: CONVIVÊNCIA\n\nCada gesto de comunicação já é um avanço. Continue praticando — inclusão se constrói um dia de cada vez."
+	}
+  ]
+}

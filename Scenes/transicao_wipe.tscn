@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bdull8350qhld"]
+
+[ext_resource type="Shader" uid="uid://c53wuc8y47m2l" path="res://Assets/UI/wipe.gdshader" id="1_xdayk"]
+[ext_resource type="Script" uid="uid://bsk54mmt41ox" path="res://Scripts/ui/TransicaoWipe.gd" id="1_yacfv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yacfv"]
+shader = ExtResource("1_xdayk")
+shader_parameter/progresso = 0.0
+shader_parameter/cor = Color(1, 1, 1, 1)
+shader_parameter/invertido = false
+shader_parameter/suavidade = 0.15
+
+[node name="TransicaoWipe" type="CanvasLayer" unique_id=78500695]
+layer = 128
+script = ExtResource("1_yacfv")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=399064658]
+material = SubResource("ShaderMaterial_yacfv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

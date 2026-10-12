@@ -1,0 +1,719 @@
+{
+  "trilhas": {
+	"principal": [
+	  {
+		"layout": "direita",
+		"tipo": "quadrado",
+		"imagem": "res://Assets/domingo_anoite/1.png",
+		"texto": "O despertador toca. Domingo começou. Amanhã será a prova de Português da Prof. Jeane.",
+		"posicao_x": 200,
+		"posicao_y": 240,
+		"interativo": true,
+		"quarto": "quarto_domingo_manha"
+	  }
+	],
+	"trilha_tarde_1": [
+	  {
+		"layout": "esquerda",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/2.png",
+		"texto": "13:00. O almoço acabou e o domingo parece mais curto.",
+		"posicao_x": 900,
+		"posicao_y": 420,
+		"interativo": true,
+		"quarto": "quarto_tarde_1"
+	  }
+	],
+	"trilha_tarde_2": [
+	  {
+		"layout": "direita",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/3.png",
+		"texto": "15:00. O grupo da sala está silencioso. O tempo está acabando.",
+		"posicao_x": 1700,
+		"posicao_y": 320,
+		"interativo": true,
+		"quarto": "quarto_tarde_2"
+	  }
+	],
+	"trilha_noite": [
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/4.png",
+		"texto": "A noite caiu. O frio na barriga começa a aparecer.",
+		"posicao_x": 2500,
+		"posicao_y": 520,
+		"interativo": true,
+		"quarto": "quarto_noite"
+	  }
+	],
+	"trilha_madrugada": [
+	  {
+		"layout": "cima",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/5.png",
+		"texto": "23:00. Seus olhos pesam, mas a ansiedade continua acordada.",
+		"posicao_x": 3300,
+		"posicao_y": 260,
+		"interativo": true,
+		"quarto": "quarto_madrugada"
+	  }
+	],
+	"trilha_segunda": [
+	  {
+		"layout": "direita",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/6.png",
+		"texto": "Segunda-feira chegou. Não há mais tempo.",
+		"posicao_x": 4100,
+		"posicao_y": 380,
+		"interativo": true,
+		"quarto": "quarto_segunda"
+	  }
+	],
+	"trilha_prova": [
+	  {
+		"layout": "baixo",
+		"tipo": "horizontal",
+		"imagem": "res://Assets/domingo_anoite/7.png",
+		"texto": "A prova começa. Tudo depende das suas escolhas.",
+		"posicao_x": 5000,
+		"posicao_y": 520,
+		"interativo": true,
+		"quarto": "quarto_prova"
+	  }
+	]
+  },
+  "quartos": {
+	"quarto_domingo_manha": {
+	  "painel": "painel_01",
+	  "ramificacao_padrao": "trilha_tarde_1",
+	  "dialogo": [
+		{
+		  "fala": "Você acorda em um domingo ensolarado. Amanhã será a prova de Português.",
+		  "personagem": "res://Assets/domingo_anoite/avata/normal.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Depois do café da manhã bate aquele tédio. O que você faz?",
+		  "personagem": "res://Assets/domingo_anoite/avata/entediado.png"
+		},
+		{
+		  "fala": "Escolha sua ação:",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Abrir o caderno de Português.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/caderno.png",
+			  "set": {
+				"dicas": 1,
+				"flag:estudou_manha": true
+			  },
+			  "ramificacao": "trilha_tarde_1"
+			},
+			{
+			  "texto": "Jogar videogame online.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/videogame.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_tarde_1"
+			},
+			{
+			  "texto": "Ficar rolando TikTok e Instagram.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/celular.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_tarde_1"
+			},
+			{
+			  "texto": "Ler o livro de Português Arcaico.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/livros.png",
+			  "set": {
+				"dicas": 1,
+				"flag:estudou_manha": true
+			  },
+			  "ramificacao": "trilha_tarde_1"
+			},
+			{
+			  "texto": "Maratonar uma série.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/tv.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_tarde_1"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_tarde_1": {
+	  "painel": "painel_02",
+	  "ramificacao_padrao": "trilha_tarde_2",
+	  "dialogo": [
+		{
+		  "fala": "13:00. O almoço passou voando.",
+		  "personagem": "res://Assets/domingo_anoite/avata/normal.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "O cansaço bate e dá aquele sono de domingo.",
+		  "personagem": "res://Assets/domingo_anoite/avata/cansado.png"
+		},
+		{
+		  "fala": "O que você decide fazer?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Revisar Códigos e Linguagens.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/revisao.png",
+			  "set": {
+				"dicas": 1,
+				"flag:estudou_tarde": true
+			  },
+			  "ramificacao": "trilha_tarde_2"
+			},
+			{
+			  "texto": "Resolver exercícios sobre Símbolos.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/execicios.png",
+			  "set": {
+				"dicas": 1,
+				"flag:estudou_tarde2": true
+			  },
+			  "ramificacao": "trilha_tarde_2"
+			},
+			{
+			  "texto": "Dormir na rede.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/cochilo.png",
+			  "set": {
+				"energia": 1
+			  },
+			  "ramificacao": "trilha_tarde_2"
+			},
+			{
+			  "texto": "Inventar um lanche gigante.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/lanche.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_tarde_2"
+			},
+			{
+			  "texto": "Conversar no WhatsApp.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/whatsapp.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_tarde_2"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_tarde_2": {
+	  "painel": "painel_03",
+	  "ramificacao_padrao": "trilha_noite",
+	  "dialogo": [
+		{
+		  "fala": "15:00. O clássico tédio do domingo aparece.",
+		  "personagem": "res://Assets/domingo_anoite/avata/entediado.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Você sente que o tempo está escapando.",
+		  "personagem": "res://Assets/domingo_anoite/avata/preocupado.png"
+		},
+		{
+		  "fala": "Qual será sua escolha?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Assistir videoaula sobre Articulação.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/videoaula.png",
+			  "set": {
+				"dicas": 1,
+				"flag:estudou_noite": true
+			  },
+			  "ramificacao": "trilha_noite"
+			},
+			{
+			  "texto": "Escrever Resumo sobre o Português do Brasil.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/resumo.png",
+			  "set": {
+				"dicas": 1
+			  },
+			  "ramificacao": "trilha_noite"
+			},
+			{
+			  "texto": "Andar de skate ou bicicleta.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/skate.png",
+			  "set": {
+				"energia": 1
+			  },
+			  "ramificacao": "trilha_noite"
+			},
+			{
+			  "texto": "Ouvir música olhando o teto.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/musica.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_noite"
+			},
+			{
+			  "texto": "Entrar no Discord.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/discord.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_noite"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_noite": {
+	  "painel": "painel_04",
+	  "ramificacao_padrao": "trilha_madrugada",
+	  "dialogo": [
+		{
+		  "fala": "A noite caiu e a ansiedade começou.",
+		  "personagem": "res://Assets/domingo_anoite/avata/preocupado.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Seus amigos chamam você para sair.",
+		  "personagem": "res://Assets/domingo_anoite/avata/surpreso.png"
+		},
+		{
+		  "fala": "O que você faz?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Sair com os amigos.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/amigos.png",
+			  "set": {
+				"social": 1
+			  },
+			  "ramificacao": "trilha_madrugada"
+			},
+			{
+			  "texto": "Fazer um simulado.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/simulado.png",
+			  "set": {
+				"dicas": 1
+			  },
+			  "ramificacao": "trilha_madrugada"
+			},
+			{
+			  "texto": "Organizar o estojo e revisar.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/estojo.png",
+			  "set": {
+				"dicas": 1
+			  },
+			  "ramificacao": "trilha_madrugada"
+			},
+			{
+			  "texto": "Assistir lives e vídeos.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/youtube.png",
+			  "set": {
+				"lazer": 1
+			  },
+			  "ramificacao": "trilha_madrugada"
+			},
+			{
+			  "texto": "Ficar conversando com a família.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/familia.png",
+			  "set": {
+				"social": 1
+			  },
+			  "ramificacao": "trilha_madrugada"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_madrugada": {
+	  "painel": "painel_05",
+	  "ramificacao_padrao": "trilha_segunda",
+	  "dialogo": [
+		{
+		  "fala": "23:00. O dia da prova está chegando.",
+		  "personagem": "res://Assets/domingo_anoite/avata/cansado.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Você precisa decidir sua última ação.",
+		  "personagem": "res://Assets/domingo_anoite/avata/ansioso.png"
+		},
+		{
+		  "fala": "Qual será sua decisão?",
+		  "personagem_ocultar": true,
+		  "escolhas": [
+			{
+			  "texto": "Dormir cedo.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/dormir.png",
+			  "set": {
+				"energia": 2,
+				"flag:dormiu": true
+			  },
+			  "ramificacao": "trilha_segunda"
+			},
+			{
+			  "texto": "Jogar só mais uma partida.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/pc.png",
+			  "set": {
+				"energia": -1
+			  },
+			  "ramificacao": "trilha_segunda"
+			},
+			{
+			  "texto": "Ficar vendo teorias aleatórias.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/reddit.png",
+			  "set": {
+				"energia": -1
+			  },
+			  "ramificacao": "trilha_segunda"
+			},
+			{
+			  "texto": "Estudar desesperadamente no escuro.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/lanterna.png",
+			  "set": {
+				"dicas": 1,
+				"energia": -2
+			  },
+			  "ramificacao": "trilha_segunda"
+			},
+			{
+			  "texto": "Andar pelo quarto ansioso.",
+			  "imagem_feedback": "res://Assets/domingo_anoite/ansiedade.png",
+			  "set": {
+				"energia": -1
+			  },
+			  "ramificacao": "trilha_segunda"
+			}
+		  ]
+		}
+	  ]
+	},
+	"quarto_segunda": {
+	  "painel": "painel_06",
+	  "ramificacao_padrao": "trilha_prova",
+	  "dialogo": [
+		{
+		  "fala": "06:30. Segunda-feira chegou.",
+		  "personagem": "res://Assets/domingo_anoite/avata/cansado.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Não há mais tempo para estudar.",
+		  "personagem": "res://Assets/domingo_anoite/avata/preocupado.png"
+		},
+		{
+		  "fala": "Você pega o celular, olha os memes da turma e aceita o destino.",
+		  "personagem": "res://Assets/domingo_anoite/avata/normal.png"
+		}
+	  ]
+	},
+	"quarto_prova": {
+	  "painel": "painel_07",
+	  "dialogo": [
+		{
+		  "fala": "A sala está silenciosa.",
+		  "personagem": "res://Assets/domingo_anoite/avata/jeane.png",
+		  "personagem_posicao": "direita"
+		},
+		{
+		  "fala": "Os alunos parecem nervosos enquanto a professora entrega as provas.",
+		  "personagem": "res://Assets/domingo_anoite/avata/jeane.png"
+		},
+		{
+		  "fala": "O som das folhas sendo distribuídas ecoa pela sala."
+		},
+		{
+		  "fala": "Você respira fundo e tenta lembrar das anotações que estudou no domingo.",
+		  "personagem": "res://Assets/domingo_anoite/avata/nervoso.png",
+		  "personagem_posicao": "esquerda"
+		},
+		{
+		  "fala": "Agora tudo depende das escolhas que você fez.",
+		  "personagem_ocultar": true
+		},
+		{
+		  "quiz": [
+			{
+			  "pergunta": "A língua portuguesa recebeu grande influência do árabe durante a presença islâmica na Península Ibérica. Qual das alternativas abaixo apresenta uma palavra de origem árabe?",
+			  "alternativas": [
+				{
+				  "texto": "A) Alface",
+				  "correta": true,
+				  "feedback": "✓ Correto! Alface vem do árabe al-khass."
+				},
+				{
+				  "texto": "B) Vatapá",
+				  "correta": false,
+				  "feedback": "✗ Vatapá é de origem africana."
+				},
+				{
+				  "texto": "C) Jenipapo",
+				  "correta": false,
+				  "feedback": "✗ Jenipapo é de origem tupi."
+				},
+				{
+				  "texto": "D) Capivara",
+				  "correta": false,
+				  "feedback": "✗ Capivara é de origem tupi."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Na cantiga medieval \"Ai flores, ai flores do verde pino\", o termo \"sabedes\" corresponde, no português atual, a qual forma verbal?",
+			  "dica": {
+				"condicao": "flag:estudou_manha",
+				"texto": "💡 Dica: Observe a terminação verbal usada em textos antigos e compare com os pronomes do português atual.",
+				"cor": "#000000"
+			  },
+			  "alternativas": [
+				{
+				  "texto": "A) Sabereis",
+				  "correta": false,
+				  "feedback": "✗ Sabereis é futuro do presente."
+				},
+				{
+				  "texto": "B) Souberam",
+				  "correta": false,
+				  "feedback": "✗ Souberam é passado, não presente."
+				},
+				{
+				  "texto": "C) Sabemos",
+				  "correta": false,
+				  "feedback": "✗ Sabemos é 1ª pessoa do plural."
+				},
+				{
+				  "texto": "D) Sabeis",
+				  "correta": true,
+				  "feedback": "✓ Correto! \"Sabedes\" é a forma arcaica de \"sabeis\"."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Os tupinismos são contribuições dos povos indígenas ao português brasileiro. Qual das opções abaixo é um exemplo de tupinismo?",
+			  "alternativas": [
+				{
+				  "texto": "A) Macumba",
+				  "correta": false,
+				  "feedback": "✗ Macumba é de origem africana."
+				},
+				{
+				  "texto": "B) Abacaxi",
+				  "correta": true,
+				  "feedback": "✓ Correto! Abacaxi vem do tupi 'nanas comosus'."
+				},
+				{
+				  "texto": "C) Candomblé",
+				  "correta": false,
+				  "feedback": "✗ Candomblé é de origem africana."
+				},
+				{
+				  "texto": "D) Acarajé",
+				  "correta": false,
+				  "feedback": "✗ Acarajé é de origem africana (iorubá)."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Segundo os conceitos estudados sobre signo linguístico, o \"significante\" corresponde a:",
+			  "dica": {
+				"condicao": "flag:estudou_tarde",
+				"texto": "💡 Dica: Pense na diferença entre o som da palavra e o significado que ela transmite.",
+				"cor": "#000000"
+			  },
+			  "alternativas": [
+				{
+				  "texto": "A) A escrita correta da palavra no dicionário",
+				  "correta": false,
+				  "feedback": "✗ A escrita é uma representação, não o significante em si."
+				},
+				{
+				  "texto": "B) A imagem sonora (sequência de sons) da palavra armazenada na memória",
+				  "correta": true,
+				  "feedback": "✓ Correto! O significante é a imagem sonora da palavra."
+				},
+				{
+				  "texto": "C) O conceito ou ideia evocada pela palavra",
+				  "correta": false,
+				  "feedback": "✗ Isso é o significado, não o significante."
+				},
+				{
+				  "texto": "D) O conjunto de regras gramaticais da língua",
+				  "correta": false,
+				  "feedback": "✗ Isso descreve a gramática normativa."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Na comparação entre português, inglês e bassa: o português usa 7 nomes para o espectro solar, o inglês 6 e o bassa apenas 2. Isso demonstra que:",
+			  "dica": {
+				"condicao": "flag:estudou_tarde2",
+				"texto": "💡 Dica: Reflita sobre como diferentes culturas organizam e interpretam a realidade ao seu redor.",
+				"cor": "#000000"
+			  },
+			  "alternativas": [
+				{
+				  "texto": "A) A percepção das cores é diferente entre os povos",
+				  "correta": false,
+				  "feedback": "✗ A percepção visual é similar; o que muda é a categorização linguística."
+				},
+				{
+				  "texto": "B) A língua e a cultura de um povo influenciam a forma de categorizar e nomear o mundo",
+				  "correta": true,
+				  "feedback": "✓ Correto! A língua reflete a visão de mundo de cada cultura."
+				},
+				{
+				  "texto": "C) O bassa é uma língua menos desenvolvida por ter menos palavras para cores",
+				  "correta": false,
+				  "feedback": "✗ Nenhuma língua é mais ou menos desenvolvida que outra."
+				},
+				{
+				  "texto": "D) O português é mais complexo gramaticalmente que outras línguas",
+				  "correta": false,
+				  "feedback": "✗ Quantidade de palavras não define complexidade gramatical."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Na palavra \"menininha\", identifique a sequência correta de morfemas:",
+			  "dica": {
+				"condicao": "flag:estudou_noite",
+				"texto": "💡 Dica: Tente separar a palavra em pequenas partes que possuem função e significado próprios.",
+				"cor": "#000000"
+			  },
+			  "alternativas": [
+				{
+				  "texto": "A) prefixo + radical + sufixo + desinência de número",
+				  "correta": false,
+				  "feedback": "✗ Não há prefixo em \"menininha\"."
+				},
+				{
+				  "texto": "B) radical + desinência modo-temporal + desinência número-pessoal",
+				  "correta": false,
+				  "feedback": "✗ Essas desinências são verbais; \"menininha\" é substantivo."
+				},
+				{
+				  "texto": "C) radical + prefixo + desinência de gênero + desinência de número",
+				  "correta": false,
+				  "feedback": "✗ O elemento diminutivo é sufixo, não prefixo."
+				},
+				{
+				  "texto": "D) radical + sufixo + desinência de gênero + desinência de número",
+				  "correta": true,
+				  "feedback": "✓ Correto! menin- (radical) + -inh (sufixo) + -a (gên.) + sem desinência de número no singular."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Analise as alternativas e marque aquela em que o par corresponde corretamente a \"substantivo primitivo\" e \"substantivo derivado\":",
+			  "alternativas": [
+				{
+				  "texto": "A) sapato – sapataria",
+				  "correta": true,
+				  "feedback": "✓ Correto! Sapataria deriva de sapato."
+				},
+				{
+				  "texto": "B) pedras – rochas",
+				  "correta": false,
+				  "feedback": "✗ São sinônimos, não primitivo e derivado."
+				},
+				{
+				  "texto": "C) anel – papel",
+				  "correta": false,
+				  "feedback": "✗ Ambos são primitivos; nenhum deriva do outro."
+				},
+				{
+				  "texto": "D) profissão – carreira",
+				  "correta": false,
+				  "feedback": "✗ São palavras independentes, não derivadas entre si."
+				}
+			  ]
+			},
+			{
+			  "pergunta": "Sobre a formação do feminino dos substantivos, assinale a alternativa INCORRETA:",
+			  "alternativas": [
+				{
+				  "texto": "A) Herói → heroína (forma especial)",
+				  "correta": false,
+				  "feedback": "✓ Esta está correta."
+				},
+				{
+				  "texto": "B) Leitor → leitora (acréscimo de -a)",
+				  "correta": false,
+				  "feedback": "✓ Esta está correta."
+				},
+				{
+				  "texto": "C) Patrão → patroa (mudança de -ão para -oa)",
+				  "correta": false,
+				  "feedback": "✓ Esta está correta."
+				},
+				{
+				  "texto": "D) Campeão → campeoa (mudança de -ão para -oa)",
+				  "correta": true,
+				  "feedback": "✓ Correto — esta é a INCORRETA! O certo é campeã ou campeoa não existe; a forma aceita é campeã."
+				}
+			  ]
+			}
+		  ],
+		  "set_acerto": {
+			"acertos": 1
+		  },
+		  "set_erro": {
+			"erros": 1
+		  },
+		  "nota_minima": 0.6,
+		  "ramificacao_aprovado": "",
+		  "ramificacao_reprovado": "",
+		  "mostrar_resultado_inline": false,
+		  "mostrar_resumo_final": true
+		}
+	  ]
+	}
+  },
+  "finais": [
+	{
+	  "id": "final_genio",
+	  "condicao": {
+		"dicas": 6,
+		"flag:dormiu": true
+	  },
+	  "texto": "✦ FINAL: PREPARADO\n\nVocê estudou bastante, descansou e chegou confiante para a prova."
+	},
+	{
+	  "id": "final_equilibrado",
+	  "condicao": {
+		"dicas": 4,
+		"social": 1
+	  },
+	  "texto": "✦ FINAL: EQUILÍBRIO\n\nVocê conseguiu estudar e ainda relaxar um pouco antes da prova."
+	},
+	{
+	  "id": "final_cansado",
+	  "condicao": {
+		"energia__lt": 0
+	  },
+	  "texto": "✦ FINAL: ESGOTADO\n\nVocê chegou destruído mentalmente na segunda-feira."
+	},
+	{
+	  "id": "final_caos",
+	  "condicao": {
+		"lazer": 5
+	  },
+	  "texto": "✦ FINAL: PROCRASTINADOR\n\nO domingo inteiro desapareceu entre distrações."
+	},
+	{
+	  "id": "final_neutro",
+	  "condicao": {},
+	  "texto": "✦ FINAL: SOBREVIVENTE\n\nA prova chegou e você fez o possível com as escolhas que tomou."
+	}
+  ]
+}

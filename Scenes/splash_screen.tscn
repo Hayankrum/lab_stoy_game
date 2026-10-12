@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://d1r03jjbfdwkf"]
+
+[ext_resource type="Script" uid="uid://b3bj22nj2yyom" path="res://Scripts/splash_screen.gd" id="1_hnr0x"]
+[ext_resource type="Texture2D" uid="uid://cwf08b0gk2vvc" path="res://Assets/UI/logo_if_png.png" id="2_8jcts"]
+[ext_resource type="Texture2D" uid="uid://2blc6mtq85no" path="res://Assets/UI/R.png" id="2_hnr0x"]
+[ext_resource type="Texture2D" uid="uid://bh0ngkd17erjr" path="res://logo.svg" id="3_8jcts"]
+[ext_resource type="Script" uid="uid://bauj4p2hansxt" path="res://Scripts/ui/paralax.gd" id="3_i0nmm"]
+
+[node name="SplashScreen" type="Control" unique_id=1013677079]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hnr0x")
+
+[node name="cor_fundo" type="ColorRect" parent="." unique_id=619583050]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoIFTO" type="TextureRect" parent="." unique_id=737877737]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8jcts")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_i0nmm")
+
+[node name="LogoPIBID" type="TextureRect" parent="." unique_id=484097951]
+visible = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hnr0x")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_i0nmm")
+
+[node name="LogoJogo" type="TextureRect" parent="." unique_id=1718815963]
+visible = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8jcts")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("3_i0nmm")

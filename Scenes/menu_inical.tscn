@@ -1,0 +1,527 @@
+[gd_scene format=3 uid="uid://ug3ot7sjdrte"]
+
+[ext_resource type="Script" uid="uid://c1jfkivcrxdas" path="res://Scripts/ui/Menu_Config.gd" id="1_tghtu"]
+[ext_resource type="Script" uid="uid://coc75xncy76hn" path="res://Scripts/ui/BotaoConfig.gd" id="2_skx0m"]
+[ext_resource type="Texture2D" uid="uid://ygr5mv2b7c8d" path="res://Assets/UI/quarto.png" id="3_s0cbe"]
+[ext_resource type="Script" uid="uid://bauj4p2hansxt" path="res://Scripts/ui/paralax.gd" id="4_s0cbe"]
+[ext_resource type="Texture2D" uid="uid://bh0ngkd17erjr" path="res://logo.svg" id="5_s0cbe"]
+[ext_resource type="Shader" uid="uid://dv6tix0rncpo3" path="res://Assets/UI/box_dialgo.gdshader" id="6_2i7a7"]
+[ext_resource type="Shader" uid="uid://di1qkaki8bpll" path="res://Assets/UI/box_btn.gdshader" id="6_o4dh0"]
+[ext_resource type="Script" uid="uid://c0tunwmt6bfxm" path="res://Scripts/ui/seletor.gd" id="8_gjikw"]
+[ext_resource type="Texture2D" uid="uid://cflp3nk4leca4" path="res://Assets/domingo_anoite/manha1.png" id="10_h33e6"]
+[ext_resource type="Texture2D" uid="uid://c7wsmielv1vgw" path="res://Assets/domingo_anoite/avata/normal.png" id="11_7aql7"]
+[ext_resource type="Script" uid="uid://c402v84j680t6" path="res://Scripts/supabase/RankingUI.gd" id="13_gjikw"]
+[ext_resource type="Texture2D" uid="uid://ykptcso8erqu" path="res://Assets/inclusao/c4.png" id="13_n4yx7"]
+[ext_resource type="Texture2D" uid="uid://c6cpl3b8e77ov" path="res://Assets/inclusao/avata/vito_feliz.png" id="14_njprx"]
+
+[sub_resource type="Resource" id="Resource_1t1jr"]
+script = ExtResource("2_skx0m")
+botao_path = NodePath("menu_incial/btn_list/Inicar")
+metadata/_custom_type_script = "uid://coc75xncy76hn"
+
+[sub_resource type="Resource" id="Resource_s0cbe"]
+script = ExtResource("2_skx0m")
+botao_path = NodePath("menu_incial/btn_list/Detalhes")
+id_painel = 1
+metadata/_custom_type_script = "uid://coc75xncy76hn"
+
+[sub_resource type="Resource" id="Resource_o4dh0"]
+script = ExtResource("2_skx0m")
+id_painel = 2
+metadata/_custom_type_script = "uid://coc75xncy76hn"
+
+[sub_resource type="Resource" id="Resource_2i7a7"]
+script = ExtResource("2_skx0m")
+botao_path = NodePath("menu_incial/btn_list/Sair")
+acao = 2
+metadata/_custom_type_script = "uid://coc75xncy76hn"
+
+[sub_resource type="Resource" id="Resource_s4n2s"]
+script = ExtResource("2_skx0m")
+botao_path = NodePath("menu_incial/btn_list/Ranked")
+id_painel = 2
+metadata/_custom_type_script = "uid://coc75xncy76hn"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4dh0"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hdso"]
+bg_color = Color(0.8352941, 0.63529414, 0.62352943, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7axt"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkovc"]
+bg_color = Color(0.54509807, 0.44705883, 0.4, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4hdso"]
+shader = ExtResource("6_o4dh0")
+shader_parameter/blur_strength = 2.0
+shader_parameter/transparency = 0.4
+shader_parameter/border_size = 2.0
+shader_parameter/rect_size = Vector2(100, 100)
+shader_parameter/glass_color = Color(0.95, 0.97, 1, 1)
+shader_parameter/border_color = Color(0.8352941, 0.63529414, 0.62352943, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gjikw"]
+shader = ExtResource("6_2i7a7")
+shader_parameter/panel_color = Color(1, 1, 1, 0.92)
+shader_parameter/border_color = Color(0.835, 0.635, 0.624, 1)
+shader_parameter/border_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4dh0"]
+shader = ExtResource("6_2i7a7")
+shader_parameter/panel_color = Color(1, 1, 1, 0.92)
+shader_parameter/border_color = Color(0.835, 0.635, 0.624, 1)
+shader_parameter/border_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0cbe"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjikw"]
+bg_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
+
+[node name="menu_inical" type="Control" unique_id=125198994 node_paths=PackedStringArray("container_paineis")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tghtu")
+container_paineis = NodePath("lista_paines")
+configuracoes = Array[ExtResource("2_skx0m")]([SubResource("Resource_1t1jr"), SubResource("Resource_s0cbe"), SubResource("Resource_o4dh0"), SubResource("Resource_2i7a7"), SubResource("Resource_s4n2s")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=45340729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="ColorRect" unique_id=1286022150]
+modulate = Color(1, 1, 1, 0.15686275)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s0cbe")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("4_s0cbe")
+
+[node name="LOGO" type="TextureRect" parent="." unique_id=1678358148]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 35.0
+offset_right = 75.0
+offset_bottom = 185.0
+grow_horizontal = 2
+texture = ExtResource("5_s0cbe")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1274345599]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 40.0
+offset_right = 595.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.43018618, 0.35179076, 0.31233516, 1)
+theme_override_font_sizes/font_size = 20
+text = "Lab Story"
+horizontal_alignment = 1
+
+[node name="menu_incial" type="Control" parent="." unique_id=344913554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_list" type="HBoxContainer" parent="menu_incial" unique_id=1339561228]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -70.0
+offset_right = 384.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Inicar" type="Button" parent="menu_incial/btn_list" unique_id=1776862867]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44314045, 0.35721874, 0.31591156, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4dh0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4hdso")
+text = "iniciar"
+
+[node name="Detalhes" type="Button" parent="menu_incial/btn_list" unique_id=92972789]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44314045, 0.35721874, 0.31591156, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b7axt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkovc")
+text = "Detalhes
+"
+
+[node name="Ranked" type="Button" parent="menu_incial/btn_list" unique_id=158816954]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44314045, 0.35721874, 0.31591156, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b7axt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkovc")
+text = "Placar"
+
+[node name="Sair" type="Button" parent="menu_incial/btn_list" unique_id=383517448]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.44314045, 0.35721874, 0.31591156, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_b7axt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkovc")
+text = "sair
+"
+
+[node name="lista_paines" type="Control" parent="." unique_id=1107488761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -16.0
+offset_right = -24.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="pn_seletor" type="HBoxContainer" parent="lista_paines" unique_id=381345694]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -100.0
+offset_right = 205.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="btn_story1" type="Button" parent="lista_paines/pn_seletor" unique_id=1204246765 node_paths=PackedStringArray("preview", "painel_descricao", "label_descricao")]
+material = SubResource("ShaderMaterial_4hdso")
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+flat = true
+script = ExtResource("8_gjikw")
+cena_destino = "uid://cnue7giwortdq"
+id_historia = "caminho_para_prova"
+preview = NodePath("previw_1")
+painel_descricao = NodePath("box_label")
+label_descricao = NodePath("box_label/Label")
+descricao = "caminho_para_prova"
+
+[node name="capa" type="TextureRect" parent="lista_paines/pn_seletor/btn_story1" unique_id=1428484865]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_h33e6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="previw_1" type="TextureRect" parent="lista_paines/pn_seletor/btn_story1" unique_id=719269013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_7aql7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="box_label" type="Panel" parent="lista_paines/pn_seletor/btn_story1" unique_id=625422532]
+material = SubResource("ShaderMaterial_gjikw")
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="lista_paines/pn_seletor/btn_story1/box_label" unique_id=302268189]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "caminho_para_prova"
+horizontal_alignment = 1
+
+[node name="btn_story2" type="Button" parent="lista_paines/pn_seletor" unique_id=853713242 node_paths=PackedStringArray("preview", "painel_descricao", "label_descricao")]
+material = SubResource("ShaderMaterial_4hdso")
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+flat = true
+script = ExtResource("8_gjikw")
+cena_destino = "uid://dmiptb7mujx0g"
+id_historia = "um_mundo_sem_som"
+preview = NodePath("previw_2")
+painel_descricao = NodePath("box_label")
+label_descricao = NodePath("box_label/Label")
+descricao = "um_mundo_sem_som"
+
+[node name="capa" type="TextureRect" parent="lista_paines/pn_seletor/btn_story2" unique_id=1291578523]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_n4yx7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="previw_2" type="TextureRect" parent="lista_paines/pn_seletor/btn_story2" unique_id=383205138]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("14_njprx")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="box_label" type="Panel" parent="lista_paines/pn_seletor/btn_story2" unique_id=1733870424]
+material = SubResource("ShaderMaterial_gjikw")
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -60.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="lista_paines/pn_seletor/btn_story2/box_label" unique_id=1897934977]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -11.5
+offset_right = 23.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "um_mundo_sem_som"
+horizontal_alignment = 1
+
+[node name="pn_detalhe" type="Panel" parent="lista_paines" unique_id=1525628119]
+visible = false
+material = SubResource("ShaderMaterial_o4dh0")
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0cbe")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="lista_paines/pn_detalhe" unique_id=200580961]
+custom_minimum_size = Vector2(520, 160)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -60.0
+offset_right = 260.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+draw_focus_border = true
+
+[node name="conteudo" type="Label" parent="lista_paines/pn_detalhe/ScrollContainer" unique_id=1042917486]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+text = "Jogo narrativo educacional desenvolvido no PIBID do IFTO – Campus Araguatins, que promove aprendizagem gamificada por meio de decisões interativas e reflexão. 
+
+Projeto orientado pela professora Jeane e desenvolvido pelos acadêmicos Richard Silva e Danilo Bruno."
+horizontal_alignment = 3
+autowrap_mode = 3
+justification_flags = 171
+
+[node name="ranked" type="Panel" parent="lista_paines" unique_id=1299140206 node_paths=PackedStringArray("container_principal", "loading_label", "botao_atualizar")]
+visible = false
+material = SubResource("ShaderMaterial_o4dh0")
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -151.0
+offset_right = 400.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0cbe")
+script = ExtResource("13_gjikw")
+container_principal = NodePath("ScrollContainer/ListaRanking")
+loading_label = NodePath("CarregandoLabel")
+botao_atualizar = NodePath("BotaoAtualizar")
+
+[node name="CarregandoLabel" type="Label" parent="lista_paines/ranked" unique_id=1629618189]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 11.0
+offset_right = 116.0
+offset_bottom = 51.0
+grow_horizontal = 2
+
+[node name="BotaoAtualizar" type="Button" parent="lista_paines/ranked" unique_id=1277041979]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 374.0
+offset_top = -189.0
+offset_right = 480.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Atualizar"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="lista_paines/ranked" unique_id=1217191191]
+custom_minimum_size = Vector2(980, 340)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -347.0
+offset_right = 380.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ListaRanking" type="VBoxContainer" parent="lista_paines/ranked/ScrollContainer" unique_id=931946726]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="nome_line" type="LineEdit" parent="." unique_id=1385025481]
+visible = false
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = 124.0
+offset_right = 176.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_confirmar" type="Button" parent="." unique_id=668968224]
+visible = false
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_left = 352.0
+offset_top = 496.0
+offset_right = 752.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0.44313726, 0.35686275, 0.31764707, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_gjikw")
+text = "Confirmar"

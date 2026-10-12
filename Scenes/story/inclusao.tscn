@@ -1,0 +1,626 @@
+[gd_scene format=3 uid="uid://dmiptb7mujx0g"]
+
+[ext_resource type="Script" uid="uid://cn2m1f8pqvbrd" path="res://Scripts/espacial/espacial_config.gd" id="1_bbhlr"]
+[ext_resource type="PackedScene" uid="uid://cj8x2ri1s246" path="res://Scenes/espacial/bloco_esquerda.tscn" id="2_66t5g"]
+[ext_resource type="PackedScene" uid="uid://bl7e2p6wn1bma" path="res://Scenes/espacial/bloco_direto.tscn" id="3_g7to5"]
+[ext_resource type="PackedScene" uid="uid://1e17vr0grtfn" path="res://Scenes/espacial/bloco_cima.tscn" id="4_bavvc"]
+[ext_resource type="PackedScene" uid="uid://dkmrlerfjun44" path="res://Scenes/espacial/bloco_baixo.tscn" id="5_iqbrr"]
+[ext_resource type="Texture2D" uid="uid://duso1wvuvh6ue" path="res://Assets/UI/botão_avança.png" id="6_bbhlr"]
+[ext_resource type="Script" uid="uid://cgg5ve2nkycsr" path="res://Scripts/narativa/Quartocontroller.gd" id="7_gqgib"]
+[ext_resource type="Texture2D" uid="uid://ivc2irpjpspg" path="res://Assets/inclusao/c1.png" id="8_7fa0n"]
+[ext_resource type="Script" uid="uid://bauj4p2hansxt" path="res://Scripts/ui/paralax.gd" id="9_66t5g"]
+[ext_resource type="Texture2D" uid="uid://c1m3or60ten8f" path="res://Assets/inclusao/c2.png" id="10_gqgib"]
+[ext_resource type="Texture2D" uid="uid://c2v8ye63copaq" path="res://Assets/inclusao/c3.png" id="11_uq1ll"]
+[ext_resource type="Texture2D" uid="uid://ykptcso8erqu" path="res://Assets/inclusao/c4.png" id="12_dabml"]
+[ext_resource type="Shader" uid="uid://dv6tix0rncpo3" path="res://Assets/UI/box_dialgo.gdshader" id="12_g7to5"]
+[ext_resource type="Texture2D" uid="uid://ciho7h4hg1sgn" path="res://Assets/inclusao/c5.png" id="13_lx0bn"]
+[ext_resource type="Texture2D" uid="uid://dqmi8sbtlrk43" path="res://Assets/inclusao/c6.png" id="14_nylxm"]
+[ext_resource type="Script" uid="uid://fghae2rbrv0w" path="res://Scripts/espacial/Telafinal.gd" id="17_gqgib"]
+[ext_resource type="Script" uid="uid://s2ykoo6obs1x" path="res://Scripts/narativa/Personagemdialogo.gd" id="17_hxh8b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wloxq"]
+shader = ExtResource("12_g7to5")
+shader_parameter/panel_color = Color(1, 1, 1, 0.92)
+shader_parameter/border_color = Color(0.835, 0.635, 0.624, 1)
+shader_parameter/border_size = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfmmf"]
+shader = ExtResource("12_g7to5")
+shader_parameter/panel_color = Color(1, 1, 1, 0.92)
+shader_parameter/border_color = Color(0.835, 0.635, 0.624, 1)
+shader_parameter/border_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v26n"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_688yx"]
+shader = ExtResource("12_g7to5")
+shader_parameter/panel_color = Color(1, 1, 1, 0.92)
+shader_parameter/border_color = Color(0.835, 0.635, 0.624, 1)
+shader_parameter/border_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4ktw"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqgib"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="quadro" type="Control" unique_id=1204069690 node_paths=PackedStringArray("mundo", "botao_avancar", "quarto", "tela_final")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bbhlr")
+mundo = NodePath("mundo")
+botao_avancar = NodePath("botao_avancar")
+quarto = NodePath("Paineis")
+tela_final = NodePath("TelaFinal")
+bloco_esquerda = ExtResource("2_66t5g")
+bloco_direita = ExtResource("3_g7to5")
+bloco_cima = ExtResource("4_bavvc")
+bloco_baixo = ExtResource("5_iqbrr")
+arquivo_json = "res://Datas/inclusao.json"
+velocidade_camera = 1.0
+velocidade_zoom_final = 2.0
+padding_historia = 1000.0
+
+[node name="fundo" type="ColorRect" parent="." unique_id=1831583250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mundo" type="Control" parent="." unique_id=1107722650]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="mundo" unique_id=1448314800]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="botao_avancar" type="TextureButton" parent="." unique_id=88724860]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -242.0
+offset_right = 75.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("6_bbhlr")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Paineis" type="Control" parent="." unique_id=1146255982 node_paths=PackedStringArray("dialogo_label", "opcoes_container", "botao_template", "botao_avancar", "feedback_imagem", "paineis_root", "quiz_painel", "quiz_pergunta_label", "quiz_opcoes_container", "quiz_botao_template", "quiz_feedback_box", "quiz_feedback_label", "personagem")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_gqgib")
+dialogo_label = NodePath("box_complemento/dialgo")
+opcoes_container = NodePath("box_complemento/lista_chose")
+botao_template = NodePath("box_complemento/lista_chose/btn_modelo")
+botao_avancar = NodePath("box_complemento/btn_avançar")
+feedback_imagem = NodePath("box_complemento/Feedback")
+paineis_root = NodePath(".")
+quiz_painel = NodePath("box_quiz")
+quiz_pergunta_label = NodePath("box_quiz/quiz_conteudo")
+quiz_opcoes_container = NodePath("box_quiz/vbox_btn_op")
+quiz_botao_template = NodePath("box_quiz/vbox_btn_op/btn_op")
+quiz_feedback_box = NodePath("box_quiz/box_feedback")
+quiz_feedback_label = NodePath("box_quiz/box_feedback/quiz_fedback")
+personagem = NodePath("box_complemento/pesonage")
+
+[node name="painel_01" type="ColorRect" parent="Paineis" unique_id=1364746600]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_01" unique_id=135277819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_7fa0n")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("9_66t5g")
+
+[node name="painel_02" type="ColorRect" parent="Paineis" unique_id=1907844645]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_02" unique_id=527236053]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_gqgib")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_66t5g")
+
+[node name="painel_03" type="ColorRect" parent="Paineis" unique_id=1462530167]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_03" unique_id=117553641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_uq1ll")
+expand_mode = 1
+stretch_mode = 3
+script = ExtResource("9_66t5g")
+
+[node name="painel_04" type="ColorRect" parent="Paineis" unique_id=1292040072]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_04" unique_id=601845480]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_dabml")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_66t5g")
+
+[node name="painel_05" type="ColorRect" parent="Paineis" unique_id=142999290]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_05" unique_id=287844562]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_lx0bn")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_66t5g")
+
+[node name="painel_06" type="ColorRect" parent="Paineis" unique_id=1217790846]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_06" unique_id=1127866401]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_nylxm")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_66t5g")
+
+[node name="painel_07" type="ColorRect" parent="Paineis" unique_id=1483071328]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cenario" type="TextureRect" parent="Paineis/painel_07" unique_id=1007892404]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_66t5g")
+
+[node name="box_quiz" type="Panel" parent="Paineis" unique_id=640113860]
+visible = false
+material = SubResource("ShaderMaterial_wloxq")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -40.0
+offset_right = 576.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="box_feedback" type="Panel" parent="Paineis/box_quiz" unique_id=643552080]
+material = SubResource("ShaderMaterial_xfmmf")
+custom_minimum_size = Vector2(400, 130)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.95500004
+anchor_top = -0.26900002
+anchor_right = -0.95500004
+anchor_bottom = -0.26900002
+offset_left = 2.1350098
+offset_top = 304.84003
+offset_right = 449.135
+offset_bottom = 434.84003
+grow_vertical = 2
+
+[node name="quiz_fedback" type="Label" parent="Paineis/box_quiz/box_feedback" unique_id=466492345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.75
+offset_top = -52.25
+offset_right = 177.75
+offset_bottom = 52.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "feedback"
+autowrap_mode = 3
+
+[node name="quiz_conteudo" type="RichTextLabel" parent="Paineis/box_quiz" unique_id=1540801956]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -242.0
+offset_top = 20.0
+offset_right = 244.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "conteudo do quiz"
+horizontal_alignment = 1
+
+[node name="vbox_btn_op" type="VBoxContainer" parent="Paineis/box_quiz" unique_id=1270139543]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.5
+offset_top = -232.0
+offset_right = 249.5
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="btn_op" type="Button" parent="Paineis/box_quiz/vbox_btn_op" unique_id=59768006]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1v26n")
+text = "teste"
+flat = true
+alignment = 0
+autowrap_mode = 3
+
+[node name="box_complemento" type="Panel" parent="Paineis" unique_id=687010539]
+visible = false
+z_index = 10
+material = SubResource("ShaderMaterial_688yx")
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="dialgo" type="RichTextLabel" parent="Paineis/box_complemento" unique_id=137861303]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -332.0
+offset_top = -144.0
+offset_right = 268.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+
+[node name="lista_chose" type="VBoxContainer" parent="Paineis/box_complemento" unique_id=80376554]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -338.0
+offset_top = -346.0
+offset_right = -38.0
+offset_bottom = -146.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="btn_modelo" type="Button" parent="Paineis/box_complemento/lista_chose" unique_id=548244215]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_h4ktw")
+text = "teste"
+autowrap_mode = 3
+
+[node name="btn_avançar" type="TextureButton" parent="Paineis/box_complemento" unique_id=441075874]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = -61.0
+offset_right = 385.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_bbhlr")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
+
+[node name="pesonage" type="TextureRect" parent="Paineis/box_complemento" unique_id=971539555 node_paths=PackedStringArray("personagem_rect")]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -393.0
+offset_right = 100.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("17_hxh8b")
+personagem_rect = NodePath(".")
+posicao_y = -100.0
+pos_x_esquerda = 40.0
+pos_x_direita = 900.0
+
+[node name="Feedback" type="TextureRect" parent="Paineis/box_complemento" unique_id=1487120781]
+modulate = Color(1, 1, 1, 0.39215687)
+self_modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -249.0
+offset_right = 100.0
+offset_bottom = -49.0
+grow_horizontal = 2
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TelaFinal" type="Panel" parent="." unique_id=1877219077 node_paths=PackedStringArray("label_titulo", "label_mensagem", "grade_estatisticas", "lista_decisoes", "label_jogador", "botao_proxima_cena", "botao_salvar_ranking")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_gqgib")
+label_titulo = NodePath("ScrollContainer/VBoxContainer/LabelTitulo")
+label_mensagem = NodePath("ScrollContainer/VBoxContainer/LabelMensagem")
+grade_estatisticas = NodePath("ScrollContainer/VBoxContainer/GradeEstats")
+lista_decisoes = NodePath("ScrollContainer/VBoxContainer/ListaDecisoes")
+label_jogador = NodePath("ScrollContainer/VBoxContainer/LabelNome")
+botao_proxima_cena = NodePath("menu_retorno")
+proxima_cena = "uid://ug3ot7sjdrte"
+botao_salvar_ranking = NodePath("nome_conf")
+
+[node name="cor_fundo" type="ColorRect" parent="TelaFinal" unique_id=1422082533]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 48.0
+offset_right = 976.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TelaFinal" unique_id=773961148]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -500.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TelaFinal/ScrollContainer" unique_id=431634467]
+custom_minimum_size = Vector2(580, 400)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="LabelTitulo" type="Label" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=2051184193]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelNome" type="Label" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=967295921]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=1299095136]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="LabelMensagem" type="RichTextLabel" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=1509274182]
+custom_minimum_size = Vector2(700, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "teste"
+
+[node name="GradeEstats" type="GridContainer" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=293252620]
+layout_mode = 2
+columns = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=858907211]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ListaDecisoes" type="VBoxContainer" parent="TelaFinal/ScrollContainer/VBoxContainer" unique_id=460287785]
+layout_mode = 2
+
+[node name="menu_retorno" type="TextureButton" parent="TelaFinal" unique_id=835162992]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = 106.0
+offset_right = -376.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_bbhlr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="nome_conf" type="Button" parent="TelaFinal" unique_id=607865245]
+custom_minimum_size = Vector2(400, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = 253.0
+offset_right = 389.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.431341, 0.43133986, 0.4313403, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqgib")
+text = "Finalizar e Retornar"

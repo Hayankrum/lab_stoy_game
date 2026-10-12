@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cj8x2ri1s246"]
+
+[node name="bloco_esquerda" type="Control" unique_id=263105758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cor_fundo" type="ColorRect" parent="." unique_id=1127269924]
+visible = false
+modulate = Color(1, 1, 1, 0.39215687)
+custom_minimum_size = Vector2(504, 234)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -117.0
+offset_right = 252.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=2094859269]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -117.0
+offset_right = 252.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="img_conteudo" type="TextureButton" parent="VBoxContainer" unique_id=2006279036]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="txt_conteudo" type="RichTextLabel" parent="VBoxContainer" unique_id=455602396]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
